@@ -23,16 +23,20 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      {products.map((product) => {
-        return (
-          <div key={product.id} className="card">
-            <img src={product.productImage} alt="Product Image" />
+      <div className="card-container">
+        {products.map((product) => {
+          return (
+            <div key={product.id} className="card">
+              <img src={product.productImage} alt="Product Image" />
 
-            <h2 className="product-name">{product.productName}</h2>
-            <p className="product-description">{product.productDescription}</p>
-          </div>
-        );
-      })}
+              <h2 className="product-name">{product.productName}</h2>
+              <p className="product-description">
+                {product.productDescription}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

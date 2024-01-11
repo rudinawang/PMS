@@ -9,28 +9,33 @@
   height: 100vh;
 } */
 
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .card {
   width: 300px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden;
+  padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .card img {
   width: 100%;
   height: 150px;
-  object-fit: cover;
+  border-radius: 5px;
 }
 
-.card .info {
-  padding: 15px;
+.product-name {
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
-.card h2 {
-  margin-top: 0;
-}
-
-.card p {
+.product-description {
+  font-size: 1rem;
   color: #555;
 }

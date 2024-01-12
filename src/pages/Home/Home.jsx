@@ -1,10 +1,11 @@
-// import React, { useEffect } from "react";
 import "./Home.css";
 import Navbar from "../../component/Navbar/Navbar";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  // const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const fetchProducts = async () => {
     const response = await axios.get(
@@ -18,7 +19,6 @@ const Home = () => {
     // do something
     fetchProducts();
   }, []);
-  console.log(products);
 
   return (
     <>
@@ -28,11 +28,14 @@ const Home = () => {
           return (
             <div key={product.id} className="card">
               <img src={product.productImage} alt="Product Image" />
-
               <h2 className="product-name">{product.productName}</h2>
               <p className="product-description">
                 {product.productDescription}
               </p>
+              <p>{product.productMaterial}</p>
+              {/* <a href="/singleProduct">See More</a> */}
+              <Link to={`/singleProduct/${product.id}`}>See More</Link>
+              {/* <button onClick={() => navigate("/singleProduct")}>See More</button> */}
             </div>
           );
         })}

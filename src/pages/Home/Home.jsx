@@ -20,22 +20,24 @@ const Home = () => {
     fetchProducts();
   }, []);
 
-  const listProduct = products.map((product) => {
-    return (
-      <div className="card" key={product.id}>
-        <img src={product.productImage} alt="Product Image" />
-        <h2 className="product-name">{product.productName}</h2>
-        <p className="product-description">{product.productDescription}</p>
-        <p>{product.productMaterial}</p>
-        <Link to={`/singleProduct/${product.id}`}>See More</Link>
-      </div>
-    );
-  });
-
   return (
     <>
       <Navbar />
-      <div className="card-container">{listProduct}</div>
+      <div className="card-container">
+        {products.map((product) => {
+          return (
+            <div className="card" key={product.id}>
+              <img src={product.productImage} alt="Product Image" />
+              <h2 className="product-name">{product.productName}</h2>
+              <p className="product-description">
+                {product.productDescription}
+              </p>
+              <p>{product.productMaterial}</p>
+              <Link to={`/singleProduct/${product.id}`}>See More</Link>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

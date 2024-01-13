@@ -6,7 +6,7 @@ import SingleProduct from "./pages/SingleProduct/SingleProduct";
 
 function App() {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -14,7 +14,7 @@ function App() {
           <Route path="/singleProduct/:id" element={<SingleProduct />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
